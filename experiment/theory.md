@@ -27,7 +27,7 @@ The equation shows that the decrease in surface area decreases the free energy o
 Surface tension of a liquid is not constant. It depends on the temperature, pressure, presence of other impurities, etc. The surface tension typically decreases with increase in temperature (for example, water has a surface tension of 72.8 dynes/cm at 293 K compared to 58.0 dynes/cm at 373 K).
 
 
- <center><img src="images/pic2.png">  </center>
+ <center><img src="images/pic2.jpg">  </center>
 
 Figure 1. Schematic illustration of molecular level interactions resulting in surface tension in liquid water. (Adopted from http://www.kibron.com/surface-tension).
 
