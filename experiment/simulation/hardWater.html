@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./css/main.css">
-    <title>Talcum in soft water</title>
+    <title>Talcum in Hard water</title>
 
 </head>
     <body>
@@ -18,9 +18,9 @@
         <div class="container-fluid links" >
             <nav class="navbar navbar-custom">
                 <ul class="nav navbar-nav h3">
-                    <li class="nav-link activeLink"><a href="" >Talcum in soft water</a></li>
+                    <li class="nav-link"><a href="./index.html" >Talcum in soft water</a></li>
                     <li class="nav-link" ><a href="./needle.html">Needle in water</a></li>
-                    <li class="nav-link"><a href="./hardWater.html">Talcum in hard water</a></li>
+                    <li class="nav-link activeLink"><a href="">Talcum in hard water</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right h3">
                     <li class="nav-link"><a href="" onclick="window.location.reload()">Reset Experiment</a></li>
@@ -31,9 +31,9 @@
             <div class="grid">
                 <div class="grid">
                     <div class="row">
-                        <h1 class = "title" id="description">Talcum in soft water.</h1>
+                        <h1 class = "title" id="description">Talcum in hard water.</h1>
                         <h3>Instructions:</h3>
-                        <div id="procedureMessage">Add Talcum to the soft water by clicking on the talcum.</div>
+                        <div id="procedureMessage">Add Talcum to the hard water by clicking on the talcum.</div>
                     </div>
                 </div>
             </div>
@@ -51,12 +51,12 @@
                 <span id="drop"></span>
             </div>
             <img src="./images/bench.png" id="bench"/>
-            <img src="./images/liquidDetergent.png" id="detergent" onclick="moveDetergent(1)">
+            <img src="./images/liquidDetergent.png" id="detergent" onclick="moveDetergent(3)">
             <img src="./images/talcum.png" id="talcum" onclick="moveTalcum()">
             <div id="molecularView">
                 <div id="videoMessage">Molecular view of Talcum in soft water:</div>  
                 <video id="videos"  width="100%" height="240"  autoplay	muted loop>
-                    <source id="videoSource" src="./images/videos/softWater.mp4" type="video/mp4"/>
+                    <source id="videoSource" src="./images/videos/hardWater.mp4" type="video/mp4"/>
                     Your browser does not support the video tag.
                 </video>
             </div>

@@ -1,1 +1,188 @@
-/* You CSS goes in here */
+#main{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+    font-size: 2.5vw;
+    z-index: -1;
+}
+
+.nav-link ,.nav ,.navbar-nav,.navbar ,.navbar-custom{
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgb(151, 202, 61);
+    color: rgb(21,100,156) ;
+}
+.nav-link{
+    padding: 0px;
+    border: 1px rgb(21,150,156) solid;
+}
+
+.activeLink{
+    background-color: rgb(151, 220, 61);
+}
+
+.nav>li>a:focus,.nav>li>a:hover{
+    background-color: rgb(151, 210, 61);
+    color: rgb(21,100,156) ;
+}
+
+#procedureMessage {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4vw;
+}
+
+.dot {
+    position: absolute;
+    top: 17vw;
+    left: 33vw;
+    height: 7px;
+    width: 7px;
+    background-color: #993300;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0;
+}
+
+#drop{
+    position: absolute;
+    top: 17vw;
+    left: 33vw;
+    height: 10px;
+    width: 10px;
+    background-color: blue;
+    border-radius: 0% 50% 50% 50%;
+    display: inline-block;
+    opacity: 0;
+}
+
+.molecularView,.dropping-objects{
+    position: relative;
+}
+
+#bench {
+    z-index: -1;
+    position: absolute;
+    align-self: center; 
+    object-fit: cover;
+    top: 10vw;
+    width: 78vw;
+    left: 10vw;
+}
+
+#needle{
+    position: absolute;
+    align-self: center;
+    object-fit: cover;
+    top: 26vw;
+    right: 30vw;
+    width: 10vw;
+}
+
+#detergent{
+    position: absolute;
+    align-self: center;
+    object-fit: cover;
+    top: 22vw;
+    right: 40vw;
+    width: 10vw;
+}
+
+#talcum{
+    position: absolute;
+    align-self: center;
+    object-fit: cover;
+    top: 22vw;
+    right: 30vw;
+    width: 10vw;
+}
+
+
+#videoMessage{
+    position: absolute; 
+    top: 45vw;
+    left: 20%;
+    font-size: 3vw;
+    display: none;
+}
+
+#videos{
+    position: absolute;
+    top: 50vw;
+    display: none;
+}
+
+@media only screen and (max-width: 750px){
+    .title{
+        font-size: 5vw;
+    }
+    .a-btn{
+        font-size: 3vw;
+    }
+    #procedureMessage{
+        font-size: 3vw;
+    }
+    #videoMessage{
+        left: 10%;
+        font-size: 4vw;
+    }
+    .dot{
+        width: 4px;
+        height: 4px;
+    }
+    #drop{
+        width: 5px;
+        height: 5px;
+    }
+}
+
+@media only screen and (min-width: 900px){
+    #bench {
+        z-index: -1;
+        top: 10vw;
+        width: 60vw;
+        left: 5vw;
+    }
+    #detergent{
+        top: 20.5vw;
+        right: 53vw;
+        width: 6vw;
+    }
+    #talcum {
+        top: 20.5vw;
+        right: 43vw;
+        width: 6vw;
+    }
+    #drop{
+        position: absolute;
+        top: 12.5vw;
+        left: 24vw;
+        width: 14px;
+        height: 14px;
+    }
+    .dot{
+        position: absolute;
+        top: 13vw;
+        left: 24vw;
+    }
+    #videoMessage{
+        top: 7vw;
+        left: 70vw;
+        width: 20%;
+        font-size: 1vw;
+    }
+    #videos{
+        top: 10vw;
+        left: 70vw;
+        width: 20%;
+        right: -30vw;
+    }
+    #needle{
+        top: 22vw;
+        right: 41vw;
+    }
+}
