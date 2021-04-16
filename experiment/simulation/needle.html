@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./css/main.css">
-    <title>Talcum in soft water</title>
+    <title>Needle in soft water</title>
 
 </head>
     <body>
@@ -18,8 +18,8 @@
         <div class="container-fluid links" >
             <nav class="navbar navbar-custom">
                 <ul class="nav navbar-nav h3">
-                    <li class="nav-link activeLink"><a href="" >Talcum in soft water</a></li>
-                    <li class="nav-link" ><a href="./needle.html">Needle in water</a></li>
+                    <li class="nav-link"><a href="./index.html" >Talcum in soft water</a></li>
+                    <li class="nav-link activeLink" ><a href="">Needle in water</a></li>
                     <li class="nav-link"><a href="./hardWater.html">Talcum in hard water</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right h3">
@@ -31,35 +31,20 @@
             <div class="grid">
                 <div class="grid">
                     <div class="row">
-                        <h1 class = "title" id="description">Talcum in soft water.</h1>
+                        <h1 class = "title" id="description">Needle in soft water.</h1>
                         <h3>Instructions:</h3>
-                        <div id="procedureMessage">Add Talcum to the soft water by clicking on the talcum.</div>
+                        <div id="procedureMessage">Drop Needle in the water by clicking on the needle.</div>
                     </div>
                 </div>
             </div>
         </div>    
         <div class="dropping-objects" id="table">
             <div>
-                <span class="dot" id="dot1"></span>
-                <span class="dot" id="dot2"></span>
-                <span class="dot" id="dot3"></span>
-                <span class="dot" id="dot4"></span>
-                <span class="dot" id="dot5"></span>
-                <span class="dot" id="dot6"></span>
-            </div>
-            <div>
                 <span id="drop"></span>
             </div>
             <img src="./images/bench.png" id="bench"/>
-            <img src="./images/liquidDetergent.png" id="detergent" onclick="moveDetergent(1)">
-            <img src="./images/talcum.png" id="talcum" onclick="moveTalcum()">
-            <div id="molecularView">
-                <div id="videoMessage">Molecular view of Talcum in soft water:</div>  
-                <video id="videos"  width="100%" height="240"  autoplay	muted loop>
-                    <source id="videoSource" src="./images/videos/softWater.mp4" type="video/mp4"/>
-                    Your browser does not support the video tag.
-                </video>
-            </div>
+            <img src="./images/liquidDetergent.png" id="detergent" onclick="moveDetergent(2)">
+            <img src="./images/needle.png" id="needle" onclick="moveNeedle()">
         </div>
 	<!-- Add JS at the bottom of HTML file --> 
         <script src="./js/main.js"></script>
