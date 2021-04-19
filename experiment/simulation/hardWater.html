@@ -18,9 +18,10 @@
         <div class="container-fluid links" >
             <nav class="navbar navbar-custom">
                 <ul class="nav navbar-nav h3">
+                    <!-- Links for other parts of experiment -->
                     <li class="nav-link"><a href="./index.html" >Talcum in soft water</a></li>
                     <li class="nav-link" ><a href="./needle.html">Needle in water</a></li>
-                    <li class="nav-link activeLink"><a href="">Talcum in hard water</a></li>
+                    <li class="nav-link"><a href="" id="activeLink">Talcum in hard water</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right h3">
                     <li class="nav-link"><a href="" onclick="window.location.reload()">Reset Experiment</a></li>
@@ -32,12 +33,16 @@
                 <div class="grid">
                     <div class="row">
                         <h1 class = "title" id="description">Talcum in hard water.</h1>
-                        <h3>Instructions:</h3>
-                        <div id="procedureMessage">Add Talcum to the hard water by clicking on the talcum.</div>
+                        <div class="instructionsBox">
+                            <!-- Instruction messages about how to perform the experiment -->
+                            <h3 id="instructions">Instructions:</h3>
+                            <div id="procedureMessage">Add Talcum to the hard water by clicking on the talcum.</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>    
+        <!-- The main visual div -->
         <div class="dropping-objects" id="table">
             <div>
                 <span class="dot" id="dot1"></span>
