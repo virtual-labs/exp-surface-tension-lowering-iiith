@@ -1,9 +1,14 @@
-if(document.getElementById("detergent"))
-    document.getElementById("detergent").style.pointerEvents = 'none';
-
 let TotalDrops = 0;
 
+// disable onclick of all components except of spoon and detergent
+if(document.getElementById("detergent")){
+    document.getElementById("detergent").style.pointerEvents = 'none';
+}
 
+
+// This function moves the powder particels 
+// it chooses one position from an array for each powder particle
+// and then removes that position from that array so that it is not used again.
 function dropPowder(){
     let positions = ['0vw','1vw','2vw','3vw','4vw','-1vw','-2vw','-3vw','-4vw','-5vw','-6vw']
     for(let i=1;i<=6;i++){
@@ -18,17 +23,18 @@ function dropPowder(){
             translateX:moveValue,
             translateY:'9vw',
             easing:'linear'
-        })
+        });
     }
 }
 
+// This function moves the powder down after detergent is added.
 function movePowder(){
     let Dropoffsets = document.getElementById('drop').getBoundingClientRect();
     let Dropleft = Dropoffsets.left;
     for(let i=1;i<=6;i++){
         let offsets = document.getElementById('dot'+String(i)).getBoundingClientRect();
         let left = offsets.left;
-        let width = offsets.width
+        let width = offsets.width;
         let change = Dropleft < left - width ? '1vw' : '-1vw';
         let a = anime.timeline({
             duration:'1000',
@@ -42,10 +48,11 @@ function movePowder(){
         }).add({
             translateY:'12vw',
             opacity:0.6,
-        })
+        });
     }
 }
 
+// This function moves the needle down after detergent is added.
 function moveNeedleDown(){
     let a = anime({
         targets:"#needle",
@@ -56,6 +63,8 @@ function moveNeedleDown(){
     });
 }
 
+// This function moves the detergent drop after the detergent bottle reaches 
+// position above the beaker
 function moveDrop(experimentNumber){
     document.getElementById("drop").style.opacity = 1;
     if(experimentNumber===1 || experimentNumber ===3){
@@ -65,17 +74,17 @@ function moveDrop(experimentNumber){
     let a = anime.timeline({
         targets:"#drop",
         easing:'linear'
-    })
+    });
     a.add({
         duration:'1',
         rotateZ:'45'
-    })
+    });
     a.add({
         duration:1000,
         translateY:'7.5vw',
         translateX:'7.5vw',
         opacity:0.4
-    })
+    });
     a.add({
         targets:"#drop",
         opacity:0
@@ -92,9 +101,11 @@ function moveDrop(experimentNumber){
         duration:1,
         translateY:'0vw',
         translateX:'0vw'
-    })
+    });
 }
 
+// This function moves the talcum powder bottle from bottom left(table)
+//  to top right(above beaker)
 function moveTalcum(){
     let detergent = document.getElementById("detergent");
     let talcum = document.getElementById("talcum");
@@ -106,7 +117,7 @@ function moveTalcum(){
         targets:"#talcum",
         duration:800,
         easing:'linear'
-    })
+    });
     a.add({
         translateX:'-27vw',
         translateY:'-10vw'
@@ -136,16 +147,18 @@ function moveTalcum(){
         translateX:'-26vw',
         translateY:'-11vw'
     }).add({
-        duration:'100',
-        opacity:'0'
+        rotateZ:'0',
+        translateX:'0vw',
+        translateY:'0vw'
     });
     
     setTimeout(()=>{
-        procedureMessage.innerHTML = "Add detergent to the solution by clicking on it."
+        procedureMessage.innerHTML = "Add detergent to the solution by clicking on it.";
     },2500);
     detergent.style.pointerEvents = 'auto';
 }
 
+// This function moves the needle from the table to the surface of the water.
 function moveNeedle(){
     let needle = document.getElementById("needle");
     let procedureMessage = document.getElementById("procedureMessage");
@@ -163,18 +176,21 @@ function moveNeedle(){
         translateY:'-10vw'
     }).add({
         translateY:'-2vw',
-    })
+    });
 
     setTimeout(()=>{
-        procedureMessage.innerHTML = "Add detergent to the solution by clicking on it."
+        procedureMessage.innerHTML = "Add detergent to the solution by clicking on it.";
     },2000);
 
     detergent.style.pointerEvents = 'auto';
 }
 
+// This function moves the detergent bottle from bottom left(table) 
+//to top right(above beaker)
 function moveDetergent(experimentNumber){
     let detergent = document.getElementById("detergent");
     let procedureMessage = document.getElementById("procedureMessage");
+    let instructions = document.getElementById("instructions");
     
     TotalDrops++;
     
@@ -182,7 +198,7 @@ function moveDetergent(experimentNumber){
         targets:"#detergent",
         duration:1000,
         easing:'linear'
-    })
+    });
     a.add({
         translateX:'-17vw',
         translateY:'-12vw'
@@ -202,17 +218,19 @@ function moveDetergent(experimentNumber){
 
     if(experimentNumber===1 || (experimentNumber===3 && TotalDrops === 3) ){
         setTimeout(()=>{
-            procedureMessage.innerHTML = "As you can see the particles move down. Watch the molecular view below."
+            procedureMessage.innerHTML = "See that the particles move down. Watch the molecular view below.";
+            instructions.innerHTML = "Observations:";
         },3000);
         detergent.style.pointerEvents = 'none';
     }else if(experimentNumber === 2){
         setTimeout(()=>{
-            procedureMessage.innerHTML = "As you can see the needle moves down."
+            procedureMessage.innerHTML = "See the needle moves down.";
+            instructions.innerHTML = "Observations:";
         },3000);
         detergent.style.pointerEvents = 'none';
     }else if(TotalDrops !== 3){
         setTimeout(()=>{
-            procedureMessage.innerHTML = "Add some more detergent to the solution. Watch the molecular view below."
+            procedureMessage.innerHTML = "Add some more detergent. Watch the molecular view below.";
         },3000);
     }
 }
