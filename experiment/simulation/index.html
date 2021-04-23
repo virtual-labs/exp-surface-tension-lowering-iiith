@@ -4,46 +4,48 @@
     <meta charset = "utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Add CSS at the head of HTML file -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/main.css">
     <title>Talcum in soft water</title>
 
 </head>
     <body>
-		<!-- Your code goes here-->
-        <div class="container-fluid links" >
-            <nav class="navbar navbar-custom">
-                <ul class="nav navbar-nav h3">
+		<div class="container-fluid links" >
+            <nav class="navbar navbar-expand-sm navbar-custom">
+                <ul class="navbar-nav h3">
                     <!-- Links for other parts of experiment -->
-                    <li class="nav-link"><a href="" id="activeLink">Talcum in soft water</a></li>
-                    <li class="nav-link" ><a href="./needle.html">Needle in water</a></li>
-                    <li class="nav-link"><a href="./hardWater.html">Talcum in hard water</a></li>
+                    <li class="nav-item"><a href="" class="nav-link activeLink">Talcum in soft water</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./needle.html">Needle in water</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./hardWater.html">Talcum in hard water</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right h3">
-                    <li class="nav-link"><a href="" onclick="window.location.reload()">Reset Experiment</a></li>
+                <ul class="nav navbar-nav ml-auto h3">
+                    <li class="nav-item"><a class="nav-link" href="" onclick="window.location.reload()">Reset Experiment</a></li>
                 </ul>
             </nav>
         </div>
-        <div class="container justify-content-center" id="main">
+        <div class="container justify-content-center main">
             <div class="grid">
                 <div class="grid">
                     <div class="row">
-                        <h1 class = "title" id="description">Talcum in soft water.</h1>
+                        <h1 class = "title">Talcum in soft water.</h1>
+                    </div>
+                    <div class="row">
+                        <!-- Instruction messages about how to perform the experiment -->
                         <div class="instructionsBox">
-                            <!-- Instruction messages about how to perform the experiment -->
-                            <h3 id="instructions">Instructions:</h3>
-                            <div id="procedureMessage">Add Talcum to the soft water by clicking on the talcum.</div>
+                            <h3 class="instructions">Instructions:</h3>
+                            <div class="procedureMessage">Add Talcum to the soft water by clicking on the talcum.</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>    
         <!-- The main visual div -->
-        <div class="dropping-objects" id="table">
+        <div class="dropping-objects">
             <div>
                 <span class="dot" id="dot1"></span>
                 <span class="dot" id="dot2"></span>
@@ -53,20 +55,19 @@
                 <span class="dot" id="dot6"></span>
             </div>
             <div>
-                <span id="drop"></span>
+                <div class="drop"></div>
             </div>
-            <img src="./images/bench.png" id="bench"/>
-            <img src="./images/liquidDetergent.png" id="detergent" onclick="moveDetergent(1)">
-            <img src="./images/talcum.png" id="talcum" onclick="moveTalcum()">
-            <div id="molecularView">
-                <div id="videoMessage">Molecular view of Talcum in soft water:</div>  
-                <video id="videos"  width="100%" height="240"  autoplay	muted loop>
-                    <source id="videoSource" src="./images/videos/softWater.mp4" type="video/mp4"/>
+            <img src="./images/bench.png" class="bench"/>
+            <img src="./images/liquidDetergent.png" class="detergent" onclick="moveDetergent(1)">
+            <img src="./images/talcum.png" class="talcum" onclick="moveTalcum()">
+            <div class="molecularView">
+                <div class="videoMessage">Molecular view of Talcum in soft water:</div>  
+                <video class="videos"  width="100%" height="240"  autoplay	muted loop>
+                    <source src="./images/videos/softWater.mp4" type="video/mp4"/>
                     Your browser does not support the video tag.
                 </video>
             </div>
         </div>
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+	    <script src="./js/main.js"></script>
     </body> 
 </html>
