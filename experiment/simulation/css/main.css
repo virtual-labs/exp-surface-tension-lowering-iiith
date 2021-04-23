@@ -1,37 +1,39 @@
-#main{
+.main{
     display: flex; 
     justify-content: center; 
     align-items: center;
 }
 
 .title {
+    margin-top: 10px;
     text-align: center;
     font-size: 2.5vw;
     z-index: -1;
 }
 
-.nav-link ,.nav ,.navbar-nav,.navbar ,.navbar-custom{
+.nav-link  ,.navbar-nav,.navbar ,.navbar-custom{
     padding-left: 15px;
     padding-right: 15px;
     color: rgb(151, 202, 61);
     background-color: rgb(21,100,156) ;
 }
 
-.nav-link>a{
+.nav-link{
     color:rgb(169,169,169);
 }
 
-#activeLink{
+.activeLink{
     color: rgb(151, 220, 61);
     
 }
 
-.nav>li>a:focus,.nav>li>a:hover{
+.navbar-nav>li>a:focus,.navbar-nav>li>a:hover{
     color: rgb(151, 210, 61);
     background-color: rgb(21,100,156) ;
 }
 
-#procedureMessage {
+.procedureMessage {
+    margin-top: 10px;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.4vw;
@@ -55,7 +57,12 @@
     opacity: 0;
 }
 
-#drop{
+
+.molecularView,.dropping-objects{
+    position: relative;
+}
+
+.drop{
     position: absolute;
     top: 17vw;
     left: 33vw;
@@ -67,11 +74,7 @@
     opacity: 0;
 }
 
-.molecularView,.dropping-objects{
-    position: relative;
-}
-
-#bench {
+.bench {
     z-index: -1;
     position: absolute;
     align-self: center; 
@@ -81,7 +84,7 @@
     left: 10vw;
 }
 
-#needle{
+.needle{
     position: absolute;
     align-self: center;
     object-fit: cover;
@@ -90,7 +93,7 @@
     width: 10vw;
 }
 
-#detergent{
+.detergent{
     position: absolute;
     align-self: center;
     object-fit: cover;
@@ -99,7 +102,7 @@
     width: 10vw;
 }
 
-#talcum{
+.talcum{
     position: absolute;
     align-self: center;
     object-fit: cover;
@@ -109,7 +112,7 @@
 }
 
 
-#videoMessage{
+.videoMessage{
     position: absolute; 
     top: 45vw;
     left: 20%;
@@ -117,7 +120,7 @@
     display: none;
 }
 
-#videos{
+.videos{
     z-index: -10;
     position: absolute;
     top: 50vw;
@@ -131,10 +134,10 @@
     .a-btn{
         font-size: 3vw;
     }
-    #procedureMessage{
+    .procedureMessage{
         font-size: 3vw;
     }
-    #videoMessage{
+    .videoMessage{
         left: 10%;
         font-size: 20px;
     }
@@ -142,36 +145,36 @@
         width: 4px;
         height: 4px;
     }
-    #drop{
+    .drop{
         width: 5px;
         height: 5px;
     }
 }
 
 @media only screen and (max-width:900px){
-    #procedureMessage{
+    .procedureMessage{
         font-size: 3vw;
     }
 }
 
 @media only screen and (min-width: 900px){
-    #bench {
+    .bench {
         z-index: -1;
         top: 10vw;
         width: 60vw;
         left: 5vw;
     }
-    #detergent{
+    .detergent{
         top: 20.5vw;
         right: 53vw;
         width: 6vw;
     }
-    #talcum {
+    .talcum {
         top: 20.5vw;
         right: 43vw;
         width: 6vw;
     }
-    #drop{
+    .drop{
         position: absolute;
         top: 12.5vw;
         left: 24vw;
@@ -183,23 +186,23 @@
         top: 13vw;
         left: 24vw;
     }
-    #videoMessage{
+    .videoMessage{
         top: 7vw;
         left: 70vw;
         width: 20%;
         font-size: 25px;
     }
-    #videos{
+    .videos{
         top: 10vw;
         left: 70vw;
         width: 20%;
         right: -30vw;
     }
-    #needle{
+    .needle{
         top: 22vw;
         right: 41vw;
     }
-    #procedureMessage{
+    .procedureMessage{
         font-size: 2vw;
     }
 }

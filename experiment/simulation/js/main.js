@@ -1,8 +1,8 @@
 let TotalDrops = 0;
 
 // disable onclick of all components except of spoon and detergent
-if(document.getElementById("detergent")){
-    document.getElementById("detergent").style.pointerEvents = 'none';
+if(document.getElementsByClassName("detergent")[0]){
+    document.getElementsByClassName("detergent")[0].style.pointerEvents = 'none';
 }
 
 
@@ -10,6 +10,7 @@ if(document.getElementById("detergent")){
 // it chooses one position from an array for each powder particle
 // and then removes that position from that array so that it is not used again.
 function dropPowder(){
+    'use strict';
     let positions = ['0vw','1vw','2vw','3vw','4vw','-1vw','-2vw','-3vw','-4vw','-5vw','-6vw']
     for(let i=1;i<=6;i++){
         let value = Math.floor(Math.random()*positions.length);
@@ -29,7 +30,8 @@ function dropPowder(){
 
 // This function moves the powder down after detergent is added.
 function movePowder(){
-    let Dropoffsets = document.getElementById('drop').getBoundingClientRect();
+    'use strict';
+    let Dropoffsets = document.getElementsByClassName('drop')[0].getBoundingClientRect();
     let Dropleft = Dropoffsets.left;
     for(let i=1;i<=6;i++){
         let offsets = document.getElementById('dot'+String(i)).getBoundingClientRect();
@@ -54,8 +56,9 @@ function movePowder(){
 
 // This function moves the needle down after detergent is added.
 function moveNeedleDown(){
+    'use strict';
     let a = anime({
-        targets:"#needle",
+        targets:".needle",
         duration:1000,
         easing:'linear',
         translateY:'1vw',
@@ -66,13 +69,14 @@ function moveNeedleDown(){
 // This function moves the detergent drop after the detergent bottle reaches 
 // position above the beaker
 function moveDrop(experimentNumber){
-    document.getElementById("drop").style.opacity = 1;
+    'use strict';
+    document.getElementsByClassName("drop")[0].style.opacity = 1;
     if(experimentNumber===1 || experimentNumber ===3){
-        document.getElementById("videoMessage").style.display = 'block';
-        document.getElementById("videos").style.display = 'block';
+        document.getElementsByClassName("videoMessage")[0].style.display = 'block';
+        document.getElementsByClassName("videos")[0].style.display = 'block';
     }
     let a = anime.timeline({
-        targets:"#drop",
+        targets:".drop",
         easing:'linear'
     });
     a.add({
@@ -86,7 +90,7 @@ function moveDrop(experimentNumber){
         opacity:0.4
     });
     a.add({
-        targets:"#drop",
+        targets:".drop",
         opacity:0
     }).add({
         begin:function(a){
@@ -97,7 +101,7 @@ function moveDrop(experimentNumber){
             }
         },
     }).add({
-        targets:"#drop",
+        targets:".drop",
         duration:1,
         translateY:'0vw',
         translateX:'0vw'
@@ -107,14 +111,15 @@ function moveDrop(experimentNumber){
 // This function moves the talcum powder bottle from bottom left(table)
 //  to top right(above beaker)
 function moveTalcum(){
-    let detergent = document.getElementById("detergent");
-    let talcum = document.getElementById("talcum");
-    let procedureMessage = document.getElementById("procedureMessage");
+    'use strict';
+    let detergent = document.getElementsByClassName("detergent")[0];
+    let talcum = document.getElementsByClassName("talcum")[0];
+    let procedureMessage = document.getElementsByClassName("procedureMessage")[0];
     
     talcum.style.pointerEvents = 'none';
     
     let a = anime.timeline({
-        targets:"#talcum",
+        targets:".talcum",
         duration:800,
         easing:'linear'
     });
@@ -160,14 +165,15 @@ function moveTalcum(){
 
 // This function moves the needle from the table to the surface of the water.
 function moveNeedle(){
-    let needle = document.getElementById("needle");
-    let procedureMessage = document.getElementById("procedureMessage");
-    let detergent = document.getElementById("detergent");
+    'use strict';
+    let needle = document.getElementsByClassName("needle")[0];
+    let procedureMessage = document.getElementsByClassName("procedureMessage")[0];
+    let detergent = document.getElementsByClassName("detergent")[0];
 
     needle.style.pointerEvents = 'none';
 
     let a = anime.timeline({
-        targets:"#needle",
+        targets:".needle",
         duration:1000,
         easing:'linear'
     });
@@ -188,14 +194,15 @@ function moveNeedle(){
 // This function moves the detergent bottle from bottom left(table) 
 //to top right(above beaker)
 function moveDetergent(experimentNumber){
-    let detergent = document.getElementById("detergent");
-    let procedureMessage = document.getElementById("procedureMessage");
-    let instructions = document.getElementById("instructions");
+    'use strict';
+    let detergent = document.getElementsByClassName("detergent")[0];
+    let procedureMessage = document.getElementsByClassName("procedureMessage")[0];
+    let instructions = document.getElementsByClassName("instructions")[0];
     
     TotalDrops++;
     
     let a = anime.timeline({
-        targets:"#detergent",
+        targets:".detergent",
         duration:1000,
         easing:'linear'
     });
