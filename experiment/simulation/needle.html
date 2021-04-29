@@ -1,43 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset = "utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/main.css">
-    <title>Needle in soft water</title>
-</head>
+    <head>
+        <meta charset = "utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./css/main.css">
+        <title>Needle in soft water</title>
+    </head>
     <body>
         <div class="container-fluid links" >
-            <nav class="navbar navbar-expand-sm navbar-custom">
-                <ul class="navbar-nav h3">
-                    <!-- Links for other parts of experiment -->
-                    <li class="nav-item"><a class="nav-link" href="./index.html" >Talcum in soft water</a></li>
-                    <li class="nav-item" ><a class="nav-link activeLink" href="">Needle in water</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./hardWater.html">Talcum in hard water</a></li>
-                </ul>
-                <ul class="navbar-nav ml-auto h3">
-                    <li class="nav-item"><a class="nav-link" href="" onclick="window.location.reload()">Reset Experiment</a></li>
-                </ul>
-            </nav>
+            <ul class="nav nav-tabs h3">
+                <!-- Links for other parts of experiment -->
+                <li class="nav-item"><a class="nav-link" href="./index.html" >Talcum in Soft Water</a></li>
+                <li class="nav-item" ><a class="nav-link active" data-toggle="tab" href="">Needle in Water</a></li>
+                <li class="nav-item"><a class="nav-link" href="./hardWater.html">Talcum in Hard Water</a></li>
+            </ul>
         </div>
         <div class="container justify-content-center main">
             <div class="grid">
                 <div class="grid">
-                    <div class="row">
-                        <h1 class = "title">Needle in soft water.</h1>
-                    </div>
                     <!-- Instruction messages about how to perform the experiment -->
                     <div class="row">
-                        <div class="instructionsBox">
+                        <div class="instructions-box">
                             <h3 class="instructions">Instructions:</h3>
-                            <div class="procedureMessage">Drop Needle in the water by clicking on the needle.</div>
+                            <div class="procedure-message">Drop Needle in the water by clicking on the needle.</div>
                         </div>
                     </div>
                 </div>
@@ -48,10 +38,11 @@
             <div>
                 <span class="drop"></span>
             </div>
-            <img src="./images/bench.png" class="bench"/>
-            <img src="./images/liquidDetergent.png" class="detergent" onclick="moveDetergent(2)">
-            <img src="./images/needle.png" class="needle" onclick="moveNeedle()">
+            <img src="./images/bench.png" id="bench"/>
+            <img src="./images/liquidDetergent.png" id="detergent" onclick="moveDetergent(2)">
+            <img src="./images/needle.png" id="needle" onclick="moveNeedle()">
         </div>
+        <button class="btn btn-primary btn-lg reset-btn" type="button" href="" onclick="window.location.reload()">reset</button>
         <script src="./js/main.js"></script>
     </body> 
 </html>
