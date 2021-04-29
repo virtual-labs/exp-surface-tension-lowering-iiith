@@ -1,0 +1,191 @@
+.main{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.title {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 2.5vw;
+    z-index: -1;
+}
+
+.reset-btn{
+    position: absolute;
+    bottom: 30px;
+    right: 50%;
+}
+
+.procedure-message {
+    margin-top: 10px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4vw;
+}
+
+.instructions-box{
+    margin-top: 10px;
+    padding: 0px 20px;
+    border-radius: 20px;
+    border: 3px solid rgb(151, 210, 61) ;
+}
+
+.dot {
+    position: absolute;
+    top: 17vw;
+    left: 33vw;
+    height: 7px;
+    width: 7px;
+    background-color: #993300;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0;
+}
+
+
+.molecular-view,.dropping-objects{
+    position: relative;
+}
+
+.drop{
+    position: absolute;
+    top: 17vw;
+    left: 33vw;
+    height: 10px;
+    width: 10px;
+    background-color: blue;
+    border-radius: 0% 50% 50% 50%;
+    display: inline-block;
+    opacity: 0;
+}
+
+#bench {
+    z-index: -1;
+    position: absolute;
+    align-self: center; 
+    object-fit: cover;
+    top: 10vw;
+    width: 78vw;
+    left: 10vw;
+}
+
+#needle{
+    position: absolute;
+    align-self: center;
+    object-fit: cover;
+    top: 26vw;
+    right: 30vw;
+    width: 10vw;
+}
+
+#detergent{
+    position: absolute;
+    align-self: center;
+    object-fit: cover;
+    top: 22vw;
+    right: 40vw;
+    width: 10vw;
+}
+
+#talcum{
+    position: absolute;
+    align-self: center;
+    object-fit: cover;
+    top: 22vw;
+    right: 30vw;
+    width: 10vw;
+}
+
+
+.video-message{
+    position: absolute; 
+    top: 45vw;
+    left: 20%;
+    font-size: 25px;
+    display: none;
+}
+
+.videos{
+    z-index: -10;
+    position: absolute;
+    top: 50vw;
+    display: none;
+}
+
+@media only screen and (max-width: 750px){
+    .title{
+        font-size: 5vw;
+    }
+    .procedure-message{
+        font-size: 3vw;
+    }
+    .video-message{
+        left: 10%;
+        font-size: 20px;
+    }
+    .dot{
+        width: 4px;
+        height: 4px;
+    }
+    .drop{
+        width: 5px;
+        height: 5px;
+    }
+}
+
+@media only screen and (max-width:900px){
+    .procedure-message{
+        font-size: 3vw;
+    }
+}
+
+@media only screen and (min-width: 900px){
+    #bench {
+        z-index: -1;
+        top: 10vw;
+        width: 60vw;
+        left: 5vw;
+    }
+    #detergent{
+        top: 20.5vw;
+        right: 53vw;
+        width: 6vw;
+    }
+    #talcum {
+        top: 20.5vw;
+        right: 43vw;
+        width: 6vw;
+    }
+    .drop{
+        position: absolute;
+        top: 12.5vw;
+        left: 24vw;
+        width: 14px;
+        height: 14px;
+    }
+    .dot{
+        position: absolute;
+        top: 13vw;
+        left: 24vw;
+    }
+    .video-message{
+        top: 16vw;
+        left: 70vw;
+        width: 20%;
+        font-size: 25px;
+    }
+    .videos{
+        top: 20vw;
+        left: 70vw;
+        width: 20%;
+        right: -30vw;
+    }
+    #needle{
+        top: 22vw;
+        right: 41vw;
+    }
+    .procedure-message{
+        font-size: 2vw;
+    }
+}
