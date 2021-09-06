@@ -4,7 +4,5 @@ We have seen how insects like the water striders or the marsh treaders walk comf
 
 Figure 1. A water strider on water.  
 
-To demonstrate the decrease in surface tension of water (including hard water) by the addition of soaps and detergents.
-
 
 
